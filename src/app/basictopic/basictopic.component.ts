@@ -16,5 +16,9 @@ export class BasictopicComponent implements OnInit {
 
   //Two Binding
 
-  teacherName:string='Tahir Hussain';
+  teacherName:string='';
+
+  onClickTeacher(name:any){
+    this.teacherName=name.value;
+  }
 }

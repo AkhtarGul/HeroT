@@ -1,9 +1,11 @@
 <p>basictopic works!</p>
 
 <div>
-  <input type="text" [(ngModel)]="teacherName">
+  <input type="text" #name placeholder="Teacher Name">
 </div>
 
 
 
-<h1>{{teacherName}}</h1>
+<h1>Teacher Name is Here::: {{teacherName}}</h1>
+
+<button (click)="onClickTeacher(name)">Please Change the Name of Your Teacher </button>

@@ -1,14 +1,18 @@
-<table>
-  <tr *ngFor="let item of sList">
-    <td>
-        {{item.rollNo}}
-    </td>
-    <td>
-        {{item.name}}
-    </td>
-    <td>
-      {{item.marks}}
-    </td>
+<h2>My Student</h2>
+<ul class="heroes">
+  <li *ngFor="let student of dummyStudentList">
+    <button [class.selected]="student === selectedStudent" type="button" (click)="onSelect(student)">
+      <span class="badge">{{student.rollNo}}</span>
+      <span class="name">{{student.name}}</span>
+    </button>
+  </li>
+</ul>
 
-  </tr>
-  </table>
+<div *ngIf="selectedStudent">
+  <h2>{{selectedStudent.name | uppercase}} Details</h2>
+  <div>Roll No: {{selectedStudent.rollNo}}</div>
+  <div>
+    <label for="student-name">Student name: </label>
+    <input id="student-name" [(ngModel)]="selectedStudent.name" placeholder="name">
+  </div>
+</div>
